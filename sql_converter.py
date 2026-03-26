@@ -2,10 +2,15 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Convert Excel workbook to SQL
-df = pd.read_excel("/Users/gvitti/Desktop/Work/Data Capstone/Redfin_SD_Data.xlsx")
+EXCEL_DIR = os.environ.get(MASTER_EXCEL)
+SQL_PSWD = os.environ.get(MYSQL_ROOT_PASSWORD)
+HOST = os.environ.get(LOCAL_HOST)
+SQL_DB = os.environ.get(MYSQL_DATABASE)
+
+df = pd.read_excel(EXCEL_DIR)
 df.columns = [c.strip().replace(" ", "_").replace("-","_") for c in df.columns]
 
-engine = create_engine("mysql+pymysql://root:redf_n0c4pstn@localhost:3307/redfin_db")
+engine = create_engine(f"mysql+pymysql://root:{SQL_PSWD}@localhost:{HOST}/{SQL_DB}")
 
 df.to_sql("sold_homes", engine, index=False, if_exists="replace")
 
