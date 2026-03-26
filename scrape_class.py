@@ -4,7 +4,7 @@ import glob
 import os
 import pandas as pd
 from bs4 import BeautifulSoup
-DEFAULT_PATH = os.environ.get(DEF_PATH)
+DEFAULT_PATH = os.environ.get("DEF_PATH")
 RENOVATION_KEYWORDS = ["fully renovated", "fully remodeled", "fully upgraded", "fully updated", "completely updated", "kitchen and bath remodeled", "turnkey", "turn-key"]
 FIXER_KEYWORDS = ["fixer", "fixer upper", "handyman special", "contractor special", "investor special", "needs TLC", "needs updating", "needs TLC",
                   "needs renovation", "needs work", "cosmetic fixer", "renovation opportunity", "great bones", "bring your vision", "priced to sell", "blank canvas", "make it your own"]
