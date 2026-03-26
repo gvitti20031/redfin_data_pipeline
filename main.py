@@ -1,11 +1,12 @@
 import pandas as pd
 import glob
 import os
-DEFAULT_PATH = "/Users/gvitti/Downloads/"
+DEFAULT_PATH = os.environ.get(MAIN_PATH)
+OUTPUT_PATH = os.environ.get(OUTPUT_DIR)
 
 data_to_analyze = input("Type the name of the folder you want to analyze: ").strip()
 input_folder = os.path.join(DEFAULT_PATH, data_to_analyze)
-output_folder = f"/Users/gvitti/Desktop/Work/Data Capstone/{data_to_analyze}Final"
+output_folder = f"{OUTPUT_PATH}{data_to_analyze}Final"
 
 os.makedirs(output_folder, exist_ok=True)
 
