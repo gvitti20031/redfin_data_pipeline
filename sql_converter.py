@@ -2,10 +2,10 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Convert Excel workbook to SQL
-EXCEL_DIR = os.environ.get(MASTER_EXCEL)
-SQL_PSWD = os.environ.get(MYSQL_ROOT_PASSWORD)
-HOST = os.environ.get(LOCAL_HOST)
-SQL_DB = os.environ.get(MYSQL_DATABASE)
+EXCEL_DIR = os.environ.get("MASTER_EXCEL")
+SQL_PSWD = os.environ.get("MYSQL_ROOT_PASSWORD")
+HOST = os.environ.get("LOCAL_HOST")
+SQL_DB = os.environ.get("MYSQL_DATABASE")
 
 df = pd.read_excel(EXCEL_DIR)
 df.columns = [c.strip().replace(" ", "_").replace("-","_") for c in df.columns]
