@@ -1,8 +1,8 @@
 import pandas as pd
 import glob
 import os
-DEFAULT_PATH = os.environ.get(MAIN_PATH)
-OUTPUT_PATH = os.environ.get(OUTPUT_DIR)
+DEFAULT_PATH = os.environ.get("MAIN_PATH")
+OUTPUT_PATH = os.environ.get("OUTPUT_DIR")
 
 data_to_analyze = input("Type the name of the folder you want to analyze: ").strip()
 input_folder = os.path.join(DEFAULT_PATH, data_to_analyze)
